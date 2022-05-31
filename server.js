@@ -188,7 +188,7 @@ apiRouter.get("/info", compression(), (req, res) => {
 //   })
 // })
 
-apiRouter.get("/", async (req, res, next) => {
+apiRouter.get("/api", async (req, res, next) => {
   if (req.isAuthenticated()) {
     res.render("form-new-product", { user: req.user.username });
   }
