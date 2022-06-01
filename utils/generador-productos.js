@@ -1,5 +1,5 @@
-const { faker } = require('@faker-js/faker');
-faker.locale = 'es'
+const faker = require('faker');
+faker.locale = "es";
 
 function generarProducto (id) {
     return {

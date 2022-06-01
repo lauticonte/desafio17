@@ -1,17 +1,23 @@
-<style>
-  body {
-    margin: 10px;
-  }
-</style>
 <header>
   <h1 style="color:blue;">Productos</h1>
   {{#if user}}
     <h2>Bienvenido, {{user}}</h2>
-    <a href="/api/logoff">Salir</a>
+    <a href="/api/logout">Salir</a>
   {{/if}}
   {{#unless user}}
-    <a href="/api/signin">Iniciar sesión</a>
-    <a href="/api/signup">Registrarse</a>
+    <form action="/api/login" method="post">
+      <div class="form-group">
+        <label for="userName"><b>Nombre de usuario</b></label>
+        <input
+          id="userName"
+          class="form-control"
+          type="text"
+          name="userName"
+          required
+        />
+      </div>
+      <button class="btn btn-success mt-3 mb-5">Iniciar sesión</button>
+    </form>      
   {{/unless}}
 </header>
 <main>
@@ -141,7 +147,7 @@
   </div>
 </aside>
 <footer>
-  <a href="/productos">Ver lista de productos</a>
+  <a href="/products">Ver lista de productos</a>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
 <script src="/js/main.js"></script>

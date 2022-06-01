@@ -5,7 +5,7 @@ const generarIds = require('../utils/generador-ids')
 class ApiProductosMock extends Contenedor {
   constructor() { super() }
 
-  popular(cant = 5) {
+  crearProductos(cant = 5) {
     const nuevos = []
     for (let i = 0; i < cant; i++) {
       const nuevoProducto = generarProductos(generarIds())
